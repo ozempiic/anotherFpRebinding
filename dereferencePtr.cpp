@@ -194,8 +194,7 @@ int main()
 	
 	printf("Size Of Stack - 0x%llx\n", SizeOfStack);
 
-	ShellcodeBytes = LoadFileIntoMemory((LPSTR)"C:\\Users\\hp\\source\\repos\\loader\\x64\\Debug\\stardust.x64.bin", &ShellcodeSize); 
-	//ShellcodeBytes = LoadFileIntoMemory((LPSTR)"Path\\To\\stardust.x64.bin", &ShellcodeSize); 
+	ShellcodeBytes = LoadFileIntoMemory((LPSTR)"Path\\To\\stardust.x64.bin", &ShellcodeSize); 
 	HeapAddress = (DWORD64)VirtualAlloc(NULL, ShellcodeSize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	memcpy((PVOID)HeapAddress, ShellcodeBytes, ShellcodeSize);
 	printf("Address of loaded shellcode %p\n", (PVOID)HeapAddress);
