@@ -45,7 +45,7 @@ I hardcoded two label stubs and correponding functions in resonance with them be
 -  The first WinAPI call sets up the prerequisites.
 -  The second WinAPI call executes the implant.
 
-[implant executed img](img.png)
+![implant executed img](img.png)
 ------------
 ### improve this?
 - this can be improved by first and foremost removing the hardcoded functions and using an array of structs to handle the hooking logic 
