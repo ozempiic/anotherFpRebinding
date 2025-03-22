@@ -48,9 +48,9 @@ I hardcoded two label stubs and correponding functions in resonance with them be
 ![implant executed img](img.png)
 ------------
 ### improve this?
-- this can be improved by first and foremost removing the hardcoded functions and using an array of structs to handle the hooking logic 
+- this can be improved by first and foremost removing the hardcoded functions and using an array of structs to handle the hooking logic - tbd
 - call stacking spoofing because the implant will be executed from an incomplete winapi call - done
-- ngl i cant think of anything else 
+- instead of `GetModuleHandleA` using PEB walking to dynamically resolve `KernelBase.dll` - done
 
 ------------
 ### References
