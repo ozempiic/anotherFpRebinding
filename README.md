@@ -15,7 +15,7 @@ x86matthew's stealthHook appeared really cool to me but it used single step exce
 ---------
 
 ### How it works?
-My implementation works by taking a pre-exsting dll (kernelbase in this case) and searching its .data section which is usually RW marked —crucial to note that this technique wont work if the .data section is not RW marked— and deferences each set of instructions (most of these will get dereferenced to invalid addresses) and then takes the valid memory addresses which fall under the memory range of the dll, to validate the deferenced pointer we again dereference it and check for a near absolute jmp
+My implementation works by taking a pre-exsting dll (kernelbase in this case) and searching its .data section which is usually RW marked —crucial to note that this technique wont work if the .data section is not RW marked— and dereferences each set of instructions (most of these will get dereferenced to invalid addresses) and then takes the valid memory addresses which fall under the memory range of the dll, to validate the deferenced pointer we again dereference it and check for a near absolute jmp
 
           +-----------------------------------------------------------------------------+
           | kernelbase.dll (Base Address: 0x10000000)                                   |
