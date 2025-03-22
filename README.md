@@ -15,7 +15,7 @@ x86matthew's stealthHook appeared really cool to me but it used single step exce
 ---------
 
 ### How it works?
-My implementation works by taking a pre-exsting dll (kernelbase in this case) and searching its .data section which is usually RW marked —crucial to note that this technique wont work if the .data section is not RW marked— and deferences each set of instructions (most of these will get dereferenced to invalid addresses) and then takes the valid memory addresses which fall under the memory range of the dll, to validate the deferenced pointer we again dereference it and check for a near absolute jmp
+My implementation works by taking a pre-exsting dll (kernelbase in this case) and searching its .data section which is usually RW marked —crucial to note that this technique wont work if the .data section is not RW marked— and dereferences each set of instructions (most of these will get dereferenced to invalid addresses) and then takes the valid memory addresses which fall under the memory range of the dll, to validate the deferenced pointer we again dereference it and check for a near absolute jmp
 
           +-----------------------------------------------------------------------------+
           | kernelbase.dll (Base Address: 0x10000000)                                   |
@@ -48,9 +48,9 @@ I hardcoded two label stubs and correponding functions in resonance with them be
 ![implant executed img](img.png)
 ------------
 ### improve this?
-- this can be improved by first and foremost removing the hardcoded functions and using an array of structs to handle the hooking logic 
-- call stacking spoofing because the implant will be executed from an incomplete winapi call
-- ngl i cant think of anything else 
+- this can be improved by first and foremost removing the hardcoded functions and using an array of structs to handle the hooking logic - tbd
+- call stacking spoofing because the implant will be executed from an incomplete winapi call - done
+- instead of `GetModuleHandleA` using PEB walking to dynamically resolve `KernelBase.dll` - done
 
 ------------
 ### References
